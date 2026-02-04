@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      .card {
+        border: solid 1px #ccc;
+        width: fit-content;
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 32px;
+      }
+
+      .card__media {
+        position: relative;
+      }
+
+      .card__img {
+        width: 400px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 32px 32px 0 0;
+      }
+
+      .card__image--contain {
+        object-fit: contain;
+      }
+
+      .card__discountBadge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      .card__categoryBadge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: blue;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      .card__title {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .card__text {
+        color: #666;
+        margin: 0;
+      }
+
+      .card__btn {
+        padding: 10px;
+      }
+
+      .card__btn--red {
+        background: red;
+        color: white;
+        transition: all 0.3s;
+        border-radius: 32px;
+      }
+
+      .card__btn--red:hover {
+        background: darkred;
+        cursor: pointer;
+      }
+
+      .card__price{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 0;
+      }
+
+      .card__price--new{
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+
+      .card__price--old{
+        color: #999;
+        text-decoration: line-through;
+      }
+
+      .card__content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .card__info {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .card__reseña {
+        color: #666;
+        margin: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <article class="card">
+      <header class="card__media">
+        <img class="card__img" src="camisa-roja.jpg" alt="Camiseta Roja" />
+        <span class="card__discountBadge">30% OFF</span>
+        <span class="card__categoryBadge">Ropa</span>
+      </header>
+      <section class="card__content">
+        <h3 class="card__title">Camiseta Roja</h3>
+        <p class="card__text">Una camiseta roja de la colección de primavera.</p>
+      </section>
+      <footer class="card__info">
+        <p class="card__price">
+          <span class="card__price--old">$50.00</span>
+          <span class="card__price--new">$35.00</span>
+        </p>
+        <p class="card__reseña">4/5 (100 reseñas)</p>
+        <button class="card__btn card__btn--red">Comprar</button>
+      </footer>
+    </article>
+    <article class="card">
+      <header class="card__media">
+        <img class="card__img card__image--contain" src="martillo.webp" alt="Martillo" />
+        <span class="card__discountBadge">30% OFF</span>
+        <span class="card__categoryBadge">Herramientas</span>
+      </header>
+      <section class="card__content">
+        <h3 class="card__title">Martillo</h3>
+        <p class="card__text">Un martillo resistente para todo tipo de trabajos.</p>
+      </section>
+      <footer class="card__info">
+        <p class="card__price">
+          <span class="card__price--old">$40.00</span>
+          <span class="card__price--new">$25.00</span>
+        </p>
+        <p class="card__reseña">3,8/5 (123 reseñas)</p>
+        <button class="card__btn card__btn--red">Comprar</button>
+      </footer>
+    </article>
+    <article class="card">
+      <header class="card__media">
+        <img class="card__img" src="flotador.webp" alt="Flotador" />
+        <span class="card__discountBadge">50% OFF</span>
+        <span class="card__categoryBadge">Piscina</span>
+      </header>
+      <section class="card__content">
+        <h3 class="card__title">Flotador</h3>
+        <p class="card__text">Un flotador para la piscina, ideal para el verano.</p>
+      </section>
+      <footer class="card__info">
+        <p class="card__price">
+          <span class="card__price--old">$20.00</span>
+          <span class="card__price--new">$10.00</span>
+        </p>
+        <p class="card__reseña">4,6/5 (322 reseñas)</p>
+        <button class="card__btn card__btn--red">Comprar</button>
+      </footer>
+    </article>
+    <article class="card">
+      <header class="card__media">
+        <img class="card__img" src="platanos.webp" alt="Plátanos" />
+        <span class="card__categoryBadge">Frutas</span>
+      </header>
+      <section class="card__content">
+        <h3 class="card__title">Plátanos</h3>
+        <p class="card__text">Un racimo de plátanos frescos y deliciosos.</p>
+      </section>
+      <footer class="card__info">
+        <p class="card__price">
+          <span class="card__price--new">$15.00</span>
+        </p>
+        <p class="card__reseña">4,9/5 (1200 reseñas)</p>
+        <button class="card__btn card__btn--red">Comprar</button>
+      </footer>
+    </article>
+    <article class="card">
+      <header class="card__media">
+        <img class="card__img" src="pelota-de-baloncesto.webp" alt="Pelota de Baloncesto" />
+        <span class="card__discountBadge">30% OFF</span>
+        <span class="card__categoryBadge">Deportes</span>
+      </header>
+      <section class="card__content">
+        <h3 class="card__title">Pelota de Baloncesto</h3>
+        <p class="card__text">Una pelota de baloncesto de alta calidad.</p>
+      </section>
+      <footer class="card__info">
+        <p class="card__price">
+          <span class="card__price--old">$50.00</span>
+          <span class="card__price--new">$35.00</span>
+        </p>
+        <p class="card__reseña">4,5/5 (200 reseñas)</p>
+        <button class="card__btn card__btn--red">Comprar</button>
+      </footer>
+    </article>
+    <article class="card">
+      <header class="card__media">
+        <img class="card__img" src="ibiza.webp" alt="Seat Ibiza" />
+        <span class="card__categoryBadge">Coches</span>
+      </header>
+      <section class="card__content">
+        <h3 class="card__title">Seat Ibiza</h3>
+        <p class="card__text">Un coche compacto y eficiente, ideal para la ciudad.</p>
+      </section>
+      <footer class="card__info">
+        <p class="card__price">
+          <span class="card__price--new">$11000.00</span>
+        </p>
+        <p class="card__reseña">
+          4,7/5 (20 reseñas)
+        </p>
+        <button class="card__btn card__btn--red">Comprar</button>
+      </footer>
+    </article>
+  </body>
+</html>
+
+<!-- 
+  Efecto hover
+  Completar el article con header, section y footer
+  Titulo y subtitulo al producto
+  Agregar seccion de precio y oferta, en caso de oferta mostrar precio anterior tachado 
+-->
+
+<!-- 
+  Añadir 6 productos más con diferentes imágenes, títulos, descripciones y precios
+  Unos deben tener oferta y otros no
+  Porcentaje de descuento en los productos en oferta (badge)
+  Reseñas de clientes
+  Categorías de productos
+-->
